@@ -11,19 +11,39 @@ namespace DinnerPartyPlanner
         public int NumberOfPeople;
         public decimal CostOfBeveragesPerPerson;
         public const int CostOfFoodPerPerson = 25;
+        decimal CostOfDecorations = 0;
 
-        decimal CostOfDecorations;
-        public bool SetHealthyOption()
+        public void SetHealthyOption(bool healthyOption)
         {
-
+            if (healthyOption)
+            {
+                CostOfBeveragesPerPerson = 5.00M;
+            }
+            else 
+            {
+                CostOfBeveragesPerPerson = 20.00M;
+            }
         }
-        public bool CalculateCostOfDecorations()
+        public void CalculateCostOfDecorations(bool fancy)
         {
-
+            if (fancy) 
+            {
+                CostOfDecorations = (NumberOfPeople * 15.00M) + 50M;
+            }
+            else
+            {
+                CostOfDecorations = (NumberOfPeople * 7.50M) + 30M;
+            }
         }
-        public decimal CalculateCost()
+        public decimal CalculateCost(bool healthyOption)
         {
-
+            decimal totalCost = CostOfDecorations+ ((CostOfBeveragesPerPerson + CostOfFoodPerPerson ) * NumberOfPeople);
+            if (healthyOption)
+            {
+                return totalCost *= 0.95M;
+            }
+            else { return totalCost; }
         }
+        
     }
 }

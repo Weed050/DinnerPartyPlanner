@@ -26,13 +26,13 @@ namespace DinnerPartyPlanner
 
         private void healthyBox_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.SetHealthyOption();
+            dinnerParty.SetHealthyOption(healthyBox.Checked);
             DisplayDinnerPartyCost();
         }
 
         private void fancyBox_CheckedChanged(object sender, EventArgs e)
         {
-            dinnerParty.CalculateCostOfDecorations();
+            dinnerParty.CalculateCostOfDecorations(fancyBox.Checked);
             DisplayDinnerPartyCost();
         }
     }
