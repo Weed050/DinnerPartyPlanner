@@ -30,10 +30,10 @@
         {
             numericUpDown1 = new NumericUpDown();
             label1 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
+            fancyBox = new CheckBox();
+            healthyBox = new CheckBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            CostLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +45,8 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(150, 27);
             numericUpDown1.TabIndex = 0;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Value = new decimal(new int[] { 5, 0, 0, 0 });
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // label1
             // 
@@ -56,25 +57,29 @@
             label1.TabIndex = 1;
             label1.Text = "Ilość osób";
             // 
-            // checkBox1
+            // fancyBox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(12, 60);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(170, 24);
-            checkBox1.TabIndex = 2;
-            checkBox1.Text = "Dekoracje fantazyjne";
-            checkBox1.UseVisualStyleBackColor = true;
+            fancyBox.AutoSize = true;
+            fancyBox.Checked = true;
+            fancyBox.CheckState = CheckState.Checked;
+            fancyBox.Location = new Point(12, 60);
+            fancyBox.Name = "fancyBox";
+            fancyBox.Size = new Size(170, 24);
+            fancyBox.TabIndex = 2;
+            fancyBox.Text = "Dekoracje fantazyjne";
+            fancyBox.UseVisualStyleBackColor = true;
+            fancyBox.CheckedChanged += fancyBox_CheckedChanged;
             // 
-            // checkBox2
+            // healthyBox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(12, 90);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(123, 24);
-            checkBox2.TabIndex = 3;
-            checkBox2.Text = "Zdrowa opcja";
-            checkBox2.UseVisualStyleBackColor = true;
+            healthyBox.AutoSize = true;
+            healthyBox.Location = new Point(12, 90);
+            healthyBox.Name = "healthyBox";
+            healthyBox.Size = new Size(123, 24);
+            healthyBox.TabIndex = 3;
+            healthyBox.Text = "Zdrowa opcja";
+            healthyBox.UseVisualStyleBackColor = true;
+            healthyBox.CheckedChanged += healthyBox_CheckedChanged;
             // 
             // label2
             // 
@@ -86,22 +91,24 @@
             label2.TabIndex = 4;
             label2.Text = "Razem:";
             // 
-            // textBox1
+            // CostLabel
             // 
-            textBox1.Location = new Point(92, 120);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(81, 27);
-            textBox1.TabIndex = 5;
+            CostLabel.BorderStyle = BorderStyle.Fixed3D;
+            CostLabel.Location = new Point(92, 122);
+            CostLabel.Name = "CostLabel";
+            CostLabel.Size = new Size(81, 25);
+            CostLabel.TabIndex = 5;
+            CostLabel.Text = " ";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(185, 167);
-            Controls.Add(textBox1);
+            Controls.Add(CostLabel);
             Controls.Add(label2);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            Controls.Add(healthyBox);
+            Controls.Add(fancyBox);
             Controls.Add(label1);
             Controls.Add(numericUpDown1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
@@ -118,9 +125,9 @@
 
         private NumericUpDown numericUpDown1;
         private Label label1;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
+        private CheckBox fancyBox;
+        private CheckBox healthyBox;
         private Label label2;
-        private TextBox textBox1;
+        private Label CostLabel;
     }
 }
