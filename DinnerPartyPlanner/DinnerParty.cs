@@ -37,6 +37,7 @@ namespace DinnerPartyPlanner
         }
         public decimal CalculateCost(bool healthyOption)
         {
+
             decimal totalCost = CostOfDecorations+ ((CostOfBeveragesPerPerson + CostOfFoodPerPerson ) * NumberOfPeople);
             if (healthyOption)
             {
