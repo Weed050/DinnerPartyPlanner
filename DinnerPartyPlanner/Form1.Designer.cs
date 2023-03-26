@@ -34,12 +34,14 @@
             healthyBox = new CheckBox();
             label2 = new Label();
             CostLabel = new Label();
+            groupBox1 = new GroupBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(12, 27);
+            numericUpDown1.Location = new Point(12, 64);
             numericUpDown1.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
@@ -51,7 +53,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 4);
+            label1.Location = new Point(12, 41);
             label1.Name = "label1";
             label1.Size = new Size(76, 20);
             label1.TabIndex = 1;
@@ -62,7 +64,7 @@
             fancyBox.AutoSize = true;
             fancyBox.Checked = true;
             fancyBox.CheckState = CheckState.Checked;
-            fancyBox.Location = new Point(12, 60);
+            fancyBox.Location = new Point(12, 97);
             fancyBox.Name = "fancyBox";
             fancyBox.Size = new Size(170, 24);
             fancyBox.TabIndex = 2;
@@ -73,7 +75,7 @@
             // healthyBox
             // 
             healthyBox.AutoSize = true;
-            healthyBox.Location = new Point(12, 90);
+            healthyBox.Location = new Point(12, 127);
             healthyBox.Name = "healthyBox";
             healthyBox.Size = new Size(123, 24);
             healthyBox.TabIndex = 3;
@@ -85,7 +87,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(12, 117);
+            label2.Location = new Point(12, 154);
             label2.Name = "label2";
             label2.Size = new Size(74, 25);
             label2.TabIndex = 4;
@@ -94,17 +96,37 @@
             // CostLabel
             // 
             CostLabel.BorderStyle = BorderStyle.Fixed3D;
-            CostLabel.Location = new Point(92, 122);
+            CostLabel.Location = new Point(92, 159);
             CostLabel.Name = "CostLabel";
             CostLabel.Size = new Size(81, 25);
             CostLabel.TabIndex = 5;
             CostLabel.Text = " ";
             // 
+            // groupBox1
+            // 
+            groupBox1.Location = new Point(282, 27);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(250, 125);
+            groupBox1.TabIndex = 6;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(0, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(50, 20);
+            label3.TabIndex = 7;
+            label3.Text = "label3";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(185, 167);
+            ClientSize = new Size(759, 271);
+            Controls.Add(label3);
+            Controls.Add(groupBox1);
             Controls.Add(CostLabel);
             Controls.Add(label2);
             Controls.Add(healthyBox);
@@ -129,5 +151,7 @@
         private CheckBox healthyBox;
         private Label label2;
         private Label CostLabel;
+        private GroupBox groupBox1;
+        private Label label3;
     }
 }

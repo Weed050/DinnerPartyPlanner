@@ -33,5 +33,7 @@ namespace DinnerPartyPlanner
             dinnerParty.HealthyOption = healthyBox.Checked;
             DisplayDinnerPartyCost();
         }
+
+
     }
 }
