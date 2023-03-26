@@ -8,32 +8,56 @@ namespace DinnerPartyPlanner
 {
     public class DinnerParty
     {
-        public int NumberOfPeople;
-        public bool FancyDecorations;
-        public bool HealthyOption;
-        decimal Cost = 0M;
+        public int NumberOfPeople { get; set; }
+        public bool FancyDecorations { get; set; }
+        public bool HealthyOption { get; set; }
+        public decimal  Cost 
+        { get 
+            { 
+            decimal cost = 0;
+             cost +=   CalculateCostOfBeveragesPerPerson();
+                cost += CalculateCostOfBeveragesPerPerson();
+                cost += NumberOfPeople * 25M;
+                if (HealthyOption)
+                {
+                    cost *= 0.95M;
+                }
+                return cost;
+            }  
+        }
 
-        public void CalculateCostOfDecorations(bool fancy)
+        public DinnerParty(int numberOfPeople,bool healthyOption,bool fancyDecoration)
         {
-            if (fancy) 
+            this.NumberOfPeople = numberOfPeople;
+            this.HealthyOption = healthyOption;
+            this.FancyDecorations = fancyDecoration;
+        }
+        private decimal CalculateCostOfDecorations()
+        {
+            decimal cost = 0;
+            if (FancyDecorations)
             {
-                CostOfDecorations = (NumberOfPeople * 15.00M) + 50M;
+                cost = (NumberOfPeople * 15M) + 50M;
             }
             else
             {
-                CostOfDecorations = (NumberOfPeople * 7.50M) + 30M;
+                cost = (NumberOfPeople * 7.5M) + 30M;
             }
+            return cost;
         }
-        public decimal CalculateCost(bool healthyOption)
+        private decimal CalculateCostOfBeveragesPerPerson()
         {
-
-            decimal totalCost = CostOfDecorations+ ((CostOfBeveragesPerPerson + CostOfFoodPerPerson ) * NumberOfPeople);
-            if (healthyOption)
+            decimal cost = 0;
+            if (HealthyOption)
             {
-                return totalCost *= 0.95M;
+                cost = NumberOfPeople * 5M;
             }
-            else { return totalCost; }
+            else
+            {
+                cost = NumberOfPeople * 20M;
+            }
+            return cost;
         }
-        
+
     }
 }
