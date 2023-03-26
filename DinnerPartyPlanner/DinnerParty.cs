@@ -22,9 +22,8 @@ namespace DinnerPartyPlanner
         {
             get
             {
-                decimal cost = 0;
-                cost = CalculateCostOfDecorations();
-                cost += NumberOfPeople * (CalculateCostOfBeveragesPerPerson() + CostOfFoodPerPerson);
+                decimal cost = CalculateCostOfDecorations();
+                cost += (CostOfFoodPerPerson * NumberOfPeople) + CalculateCostOfBeverages();
                 if (HealthyOption)
                 {
                     cost = cost * 0.95M;
@@ -39,24 +38,24 @@ namespace DinnerPartyPlanner
             decimal cost = 0;
             if (FancyDecorations)
             {
-                cost = (NumberOfPeople * 15.00M) + 50.00M;
+                cost = (NumberOfPeople * 15M) + 50M;
             }
             else
             {
-                cost = (NumberOfPeople * 7.50M) + 30.00M;
+                cost = (NumberOfPeople * 7.5M) + 30M;
             }
             return cost;
         }
-        private decimal CalculateCostOfBeveragesPerPerson()
+        private decimal CalculateCostOfBeverages()
         {
             decimal cost = 0;
             if (HealthyOption)
             {
-                cost = NumberOfPeople * 5.00M;
+                cost = NumberOfPeople * 5M;
             }
             else
             {
-                cost = NumberOfPeople * 20.00M;
+                cost = NumberOfPeople * 20M;
             }
             return cost;
         }
