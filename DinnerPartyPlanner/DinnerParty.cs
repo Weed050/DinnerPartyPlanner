@@ -9,21 +9,10 @@ namespace DinnerPartyPlanner
     public class DinnerParty
     {
         public int NumberOfPeople;
-        public decimal CostOfBeveragesPerPerson;
-        public const int CostOfFoodPerPerson = 25;
-        decimal CostOfDecorations = 0;
+        public bool FancyDecorations;
+        public bool HealthyOption;
+        decimal Cost = 0M;
 
-        public void SetHealthyOption(bool healthyOption)
-        {
-            if (healthyOption)
-            {
-                CostOfBeveragesPerPerson = 5.00M;
-            }
-            else 
-            {
-                CostOfBeveragesPerPerson = 20.00M;
-            }
-        }
         public void CalculateCostOfDecorations(bool fancy)
         {
             if (fancy) 
