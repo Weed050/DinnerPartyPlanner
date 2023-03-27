@@ -3,17 +3,26 @@ namespace DinnerPartyPlanner
     public partial class Form1 : Form
     {
         DinnerParty dinnerParty;
-
+        BirthdayParty birthdayParty;
         public void DisplayDinnerPartyCost()
         {
             decimal Cost = dinnerParty.Cost;
             CostLabel.Text = Cost.ToString("C");
+        }
+        public void DisplayBirthdayPartyCost()
+        {
+            decimal Cost = birthdayParty.Cost;
+            costLabel2.Text = Cost.ToString("C");
         }
         public Form1()
         {
             InitializeComponent();
             dinnerParty = new DinnerParty((int)numericUpDown1.Value, healthyBox.Checked, fancyBox.Checked);
             DisplayDinnerPartyCost();
+
+            // birthday party
+            birthdayParty = new BirthdayParty((int)numericUpDown2.Value, fancyDecorationsBP.Checked, textBoxCake.Text);
+            DisplayBirthdayPartyCost();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -34,6 +43,16 @@ namespace DinnerPartyPlanner
             DisplayDinnerPartyCost();
         }
 
+        //birthday party
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
