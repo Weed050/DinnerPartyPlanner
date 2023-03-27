@@ -11,6 +11,7 @@ namespace DinnerPartyPlanner
         }
         public void DisplayBirthdayPartyCost()
         {
+            toLongText.Visible = birthdayParty.CakeWritingToLong;
             decimal Cost = birthdayParty.Cost;
             costLabel2.Text = Cost.ToString("C");
         }
@@ -46,13 +47,20 @@ namespace DinnerPartyPlanner
         //birthday party
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-
+            birthdayParty.NumberOfPeople = (int)numericUpDown2.Value;
+            DisplayBirthdayPartyCost();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void fancyDecorationsBP_CheckedChanged(object sender, EventArgs e)
         {
-
+            birthdayParty.FancyDecorations = fancyDecorationsBP.Checked;
+            DisplayBirthdayPartyCost();
         }
 
+        private void textBoxCake_TextChanged(object sender, EventArgs e)
+        {
+            birthdayParty.CakeWriting = textBoxCake.Text;
+            DisplayBirthdayPartyCost() ;
+        }
     }
 }

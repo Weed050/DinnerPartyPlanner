@@ -94,7 +94,7 @@
             fancyDecorationsBP.TabIndex = 8;
             fancyDecorationsBP.Text = "Dekoracje fantazyjne";
             fancyDecorationsBP.UseVisualStyleBackColor = true;
-            fancyDecorationsBP.CheckedChanged += checkBox1_CheckedChanged;
+            fancyDecorationsBP.CheckedChanged += fancyDecorationsBP_CheckedChanged;
             // 
             // label5
             // 
@@ -131,6 +131,7 @@
             textBoxCake.Size = new Size(170, 27);
             textBoxCake.TabIndex = 14;
             textBoxCake.Text = "Sto lat!";
+            textBoxCake.TextChanged += textBoxCake_TextChanged;
             // 
             // toLongText
             // 
