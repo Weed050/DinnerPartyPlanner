@@ -20,6 +20,39 @@ namespace DinnerPartyPlanner
                 }
                 else { return CakeWriting.Length; }
             }}
+        public bool CakeWritingToLong
+        {
+            get 
+            {
+                if(CakeWriting.Length > MaxWritingLenght())
+                return true;
+                else
+                    return false;
+            }
+        }
+        private decimal CalculateCostOfDecorations()
+        {
+            decimal cost;
+            if (FancyDecorations)
+                cost = (NumberOfPeople * 15M) + 50M;
+            else
+                cost = (NumberOfPeople * 7.5M) + 30M;
+            return cost;
+        }
+        public decimal Cost 
+        {
+            get 
+            {
+                decimal totalCost = CalculateCostOfDecorations();
+                totalCost += CostOfFoodPerPerson * NumberOfPeople;
+                decimal cakeCost;
+                if (CakeSize() == 20)
+                    cakeCost = 40M + (ActualLenght * .25M);
+                else
+                    cakeCost = 75M + (ActualLenght * .25M);
+                return cakeCost+totalCost;
+            }
+        }
         private int CakeSize()
         {
             if (NumberOfPeople <= 4)
