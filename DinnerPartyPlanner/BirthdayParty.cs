@@ -63,7 +63,7 @@ namespace DinnerPartyPlanner
         }
         private int MaxWritingLenght()
         {
-            if (CakeSize() == 20)
+            if (CakeSize() == 8)
                 return 16;
             else
                 return 40;
